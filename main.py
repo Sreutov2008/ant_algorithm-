@@ -28,7 +28,6 @@ while 0 <= ant_x < width and 0 <= ant_y < height:
     ant_y += dy
 
 # Сохраняем изображение и считаем черные клетки
-image.save('ant_path.png')
 num_black_cells = sum(
                       1
                       for x in range(width)
@@ -36,4 +35,6 @@ num_black_cells = sum(
                       if image.getpixel((x, y)) == 0
                       )
 
-print(num_black_cells)
+image.save(f'ant_path_{num_black_cells}_black_cells.png')
+
+print(f'Черных пикселей на поле {num_black_cells}')
